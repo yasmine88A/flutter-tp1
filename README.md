@@ -1,92 +1,123 @@
-# 🔢 TP Flutter — Application Compteur Améliorée
+# 🔢 TP1 Flutter — Application Compteur Améliorée
 
-## 📌 Présentation
+## 📌 Présentation du projet
 
-Ce projet est une application mobile développée avec **Flutter et Dart** dans le cadre d'un travail pratique (TP).
+Ce projet est une application développée avec **Flutter et Dart** dans le cadre d'un travail pratique (TP).
 
-L'objectif est de développer un compteur interactif et de l'améliorer en intégrant la gestion des limites, des alertes visuelles et une personnalisation dynamique de l'affichage.
+L'objectif est de créer un compteur interactif et d'y intégrer plusieurs améliorations : gestion des limites, alertes visuelles et personnalisation dynamique de l'affichage.
 
 ## 🎯 Objectifs du TP
 
-- Manipuler les widgets Flutter.
-- Gérer les interactions utilisateur avec `setState()`.
+- Découvrir les widgets Flutter et Material Design.
+- Gérer les interactions avec `StatefulWidget` et `setState()`.
 - Implémenter des conditions pour contrôler les valeurs du compteur.
-- Personnaliser dynamiquement l'interface.
-- Utiliser les composants `SnackBar` et `ElevatedButton`.
+- Afficher des alertes avec `SnackBar`.
+- Modifier dynamiquement l'apparence de l'interface.
 
-## 🚀 Fonctionnalités réalisées
+## 🚀 Fonctionnalités et améliorations
 
 ### 1. Gestion des limites et des seuils
 
-**Limites Min / Max**
-- Valeur minimale : 0.
-- Valeur maximale : 10.
-- Le compteur ne peut pas dépasser les limites définies.
+**Limites minimale et maximale**
+- Le compteur est limité entre **0 et 10**.
+- Il ne peut pas descendre en dessous de 0 ni dépasser 10.
 
 **Alertes visuelles**
-- Affichage d'un `SnackBar` lorsque la valeur maximale est atteinte.
-- Message : « Limite maximale atteinte ! ».
+- Un `SnackBar` apparaît lorsque le compteur atteint 10.
+- Message affiché : **« Limite maximale atteinte ! »**
 
-**Désactivation des boutons**
-- Le bouton `−` est désactivé lorsque le compteur atteint 0.
-- Le bouton `+` est désactivé lorsque le compteur atteint 10.
+**Désactivation automatique des boutons**
+- À 0, le bouton de décrémentation `−` est désactivé.
+- À 10, le bouton d'incrémentation `+` est désactivé.
+- Les boutons se réactivent automatiquement lorsque la valeur le permet.
 
-### 2. Personnalisation dynamique
+### 2. Personnalisation dynamique du compteur
 
-**Changement de couleur**
-- 🟢 Vert : nombres pairs.
-- 🟠 Orange : nombres impairs.
+**Changement de couleur selon la valeur**
+- 🟢 Vert : lorsque le nombre est pair.
+- 🟠 Orange : lorsque le nombre est impair.
 
-**Taille dynamique du texte**
-- La taille du compteur augmente progressivement avec sa valeur.
+**Taille dynamique**
+- La taille du texte augmente progressivement avec la valeur du compteur.
 
-**Indicateurs numériques**
-- Affichage de « Nombre Pair ».
-- Affichage de « Nombre Impair ».
-- Identification des nombres premiers : 2, 3, 5 et 7.
+**Indicateur de parité et de primalité**
+
+Un libellé apparaît sous le compteur :
+
+- `Nombre Pair` pour les nombres pairs non premiers.
+- `Nombre Impair` pour les nombres impairs non premiers.
+- `Nombre Premier` pour les nombres premiers : 2, 3, 5 et 7.
 
 ## 🛠️ Technologies utilisées
 
 | Technologie | Utilisation |
 |---|---|
-| Flutter | Développement de l'interface |
-| Dart | Logique de programmation |
-| Material Design | Composants graphiques |
-| VS Code / Android Studio | Environnement de développement |
+| Flutter | Développement de l'application |
+| Dart | Logique du compteur |
+| Material Design | Interface et composants graphiques |
+| StatefulWidget | Gestion de l'état |
+| setState() | Actualisation de l'interface |
+| SnackBar | Affichage des alertes |
+| VS Code / Android Studio | Développement et exécution |
 
 ## 📂 Structure du projet
 
-- `lib/main.dart` — Interface et logique du compteur.
-- `pubspec.yaml` — Configuration et dépendances Flutter.
-- `android/` — Configuration Android.
-- `web/` — Configuration Web.
+```text
+flutter-tp1/
+├── android/
+├── lib/
+│   └── main.dart
+├── pubspec.yaml
+├── pubspec.lock
+└── README.md
+```
+
+Le fichier `lib/main.dart` contient l'interface et les fonctionnalités du compteur.
 
 ## ▶️ Installation et exécution
 
-**1. Cloner le dépôt**
+### 1. Cloner le dépôt
 
-`git clone https://github.com/yasmine88A/flutter-tp-compteur.git`
+```bash
+git clone https://github.com/yasmine88A/flutter-tp1.git
+```
 
-**2. Accéder au projet**
+### 2. Accéder au projet
 
-`cd flutter-tp-compteur`
+```bash
+cd flutter-tp1
+```
 
-**3. Installer les dépendances**
+### 3. Installer les dépendances
 
-`flutter pub get`
+```bash
+flutter pub get
+```
 
-**4. Exécuter l'application**
+### 4. Lancer l'application
 
-`flutter run`
+```bash
+flutter run
+```
 
-Pour une exécution sur Google Chrome :
+Pour exécuter l'application sur Google Chrome :
 
-`flutter run -d chrome`
+```bash
+flutter run -d chrome
+```
 
-## ✅ Résultat attendu
+## ✅ Résultats
 
-L'application permet d'incrémenter et de décrémenter un compteur entre 0 et 10, tout en adaptant automatiquement son apparence selon la valeur affichée.
+L'application permet d'incrémenter et de décrémenter un compteur tout en respectant les limites définies.
 
-Les améliorations apportées rendent l'application plus interactive et permettent de pratiquer la gestion des états et des événements avec Flutter.
+Elle adapte automatiquement la couleur, la taille du texte et l'indicateur numérique selon la valeur affichée.
 
-## 👩‍💻 Réal
+Ces améliorations permettent de mettre en pratique la gestion des états, les conditions et les interactions utilisateur avec Flutter.
+
+## 👩‍💻 Réalisation
+
+**Yasmine Anwar**
+
+Étudiante en ingénierie informatique
+
+**Projet académique — TP1 Flutter**
